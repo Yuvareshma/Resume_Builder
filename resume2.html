@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="resume2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js" integrity="sha512-pdCVFUWsxl1A4g0uV6fyJ3nrnTGeWnZN2Tl/56j45UvZ1OMdm9CIbctuIHj+yBIRTUUyv6I9+OivXj4i0LPEYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="first" id="first">
+        <div class="form">
+            <div class="head">
+                <h1>Resume form</h1>
+            </div>
+            
+        </div>
+        <div class="main">
+            <div class="left">
+                <h3>Personal information</h3>
+                <div class="info" >
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" id="fname">
+                </div>
+                <div class="info" id="sName">
+                    <label>Second Name</label>
+                    <input type="text" placeholder="Second Name" id="sname">
+                </div>
+                <div class="info">
+                    <label>Gmail</label>
+                    <input type="mail" id="gmail" placeholder="Gmail" >
+                </div>
+                <div class="info">
+                    <label>Mobile Number</label>
+                    <input type="text" placeholder="Number" id="inum">
+                </div>
+                <div class="info">
+                    <label>Place</label>
+                    <input type="text" placeholder="Place" id="place">
+                </div>
+                <div class="info">
+                    <label>Linkedin</label>
+                    <input type="text" id="link" placeholder="Linkedin">
+                </div>
+                <div class="infos" id="skills">
+                    <label>Skills</label>
+                    <textarea name="skills" class="sk" id="skills" rows="" placeholder="Skills"></textarea>
+                    <div class="add" id="add2">
+                        <button onclick="Addsk()" class="btn2 check">Add</button>
+                        <button onclick="delbox()" class="delbtn">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h3>Carrier information</h3>
+                <div class="info">
+                    <label>Carrier Objective</label>
+                    <textarea name="Carrier Objective" rows="3" placeholder="Carrier Objective" id="carr"></textarea>
+                </div>
+                <div class="info" id="Edu">
+                    <label class="edu-lab">Education</label>
+                    <textarea rows="" placeholder="Enter your School/College name with percentage obtained" class="boxe" id="edub"></textarea>
+                    <div class="add" id="add3">
+                        <button onclick="Addboxe()" class="btn check">Add</button>
+                        <button onclick="delbox()" class="delbtn">Delete</button>
+                    </div>
+                </div>
+                <div class="info" id="Aoi">
+                    <label class="edu-lab">Area of Interest</label>
+                    <textarea rows="" placeholder="Area of Interest" class="box"></textarea>
+                    <div class="add" id="add">
+                        <button onclick="Addbox()" class="btn check">Add</button>
+                        <button onclick="delbox()" class="delbtn">Delete</button>
+                    </div>
+                </div>
+                <div class="info" id="pro">
+                    <label>Projects</label>
+                    <textarea rows="" placeholder="Projects" class="box1"></textarea>
+                    <div class="add" id="add1">
+                        <button onclick="Addnextbox()" class="check">Add</button>
+                        <button onclick="delbox1()" class="delbtn1">Delete</button>
+                    </div>
+                </div>
+                <div class="info" id="aaa">
+                    <label>Awards and Achievements</label>
+                    <textarea rows="" placeholder="Awards and Achievements" class="box3"></textarea>
+                    <div class="add" id="add4">
+                        <button onclick="Addnbox()" class=" btn check">Add</button>
+                        <button onclick="delbox1()" class="delbtn1">Delete</button>
+                    </div>
+                </div>
+                <div class="info" id="inte">
+                    <label>Internships and Workshops</label>
+                    <textarea rows="" placeholder="Internships and Workshops" class="box4"></textarea>
+                    <div class="add" id="add5">
+                        <button onclick="Addibox()" class=" btn check">Add</button>
+                        <button onclick="delbox1()" class="delbtn1">Delete</button>
+                    </div>
+                </div>
+                <div class="info" id="Hoi">
+                    <label class="edu-lab">Hobbies</label>
+                    <textarea rows="" placeholder="Hobbies" class="box5"></textarea>
+                    <div class="add" id="add6">
+                        <button onclick="Addbbox()" class="btn check">Add</button>
+                        <button onclick="delbox()" class="delbtn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download">
+            <button class="print" type="submit" onclick="generate()">Generate Resume</button>
+        </div>        
+    </div>
+<div class="some">
+    <div class="container" id="contain">
+    <div class="left">
+        <div class="profile">
+            <h2 id="userf">Yuvareshma</h2><h2 id="users"> Senthilnathan</h2>
+        </div>
+        <div class="contact">
+            <h3 class="title">Contact Info</h3>
+            <ul>
+                <li>
+                    <span class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                    <span class="text" id="unum">+91 123456789</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                    <span class="text" id="ug">yuvareshma@gmail.com</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span>
+                    <span class="text" id="ulink">www.linkedin.com</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <span class="text" id="uplace">Puducherry,India</span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Carrier objective</h1>
+            <p id="carru"></p>
+        </div>
+        <div class="skills">
+            <h3>Skills</h3>
+            <ul id="ski" class="ulo">
+                <li id="uskill">one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="area">
+            <h3>Area of Interest</h3>
+            <ul id="aoi" class="ulo">
+                <li id="uarea">one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="hob">
+            <h3>Hobbies</h3>
+            <ul id="hoi" class="ulo">
+                <li id="uhob">one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+    </div>
+    <div class="right">
+        
+        <div class="edu">
+            <h1>Education</h1>
+            <ul id="educ">
+                <li id="">one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="proj">
+            <h1>Projects</h1>
+            <ul id="proj">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="adac">
+            <h1>Awards and Achievements</h1>
+            <ul id="adac">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="int">
+            <h1>Internships and Workshops</h1>
+            <ul id="int">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+    </div>
+</div></div>
+    
+    <div class="printresume" id="pr">
+        <button class="print" id="btn">Download Your Resume</button>
+    </div>
+    <script src="resume2.js"></script>
+</body>
+</html>
